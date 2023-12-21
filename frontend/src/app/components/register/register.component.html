@@ -1,0 +1,63 @@
+<div>
+    <h2>Register</h2>
+    <form (ngSubmit)="Register()">
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Fill out your name</ng-template>
+          <mat-form-field>
+            <mat-label>Firstname</mat-label>
+            <input matInput [(ngModel)]="firstname" placeholder="First name" formControlName="firstCtrl" minlength="3" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Lastname</mat-label>
+            <input matInput [(ngModel)]="lastname" placeholder="Last name" formControlName="lastCtrl" minlength="3" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Username</ng-template>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input [(ngModel)]="username" matInput formControlName="secondCtrl" minlength="3" placeholder="Ex. Tk737" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Password</ng-template>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" minlength="3" [(ngModel)]="password" matInput [formControl]="passwordControll" [errorStateMatcher]="matcher" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Confirm password</mat-label>
+            <input type="password" minlength="3" [(ngModel)]="confirmPassword" matInput [formControl]="passwordConfirmationControll" [errorStateMatcher]="matcher" required>
+            <mat-error *ngIf="passwordConfirmationControll.hasError('mismatch')">
+              Passwords do not match
+            </mat-error>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext [disabled]="!thirdFormGroup.valid">Next</button>
+          </div>
+        </form>
+      </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <div>
+            <button type="submit" mat-button>Finish</button>
+          </div>
+        </mat-step>
+     </mat-stepper>
+    </form>
+  </div>

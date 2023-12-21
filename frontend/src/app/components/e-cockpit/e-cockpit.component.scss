@@ -1,0 +1,87 @@
+.e-cockpit {
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px; /* Adjust based on your layout */
+  margin: 0 auto; /* Center align the container */
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #f4f4f4; /* Light background for the container */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Tabs Styling */
+.mat-tab-group {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mat-tab-label {
+  color: #333333; /* Dark text for better readability */
+  font-weight: 600;
+}
+
+.mat-tab-label-active {
+  color: #4CAF50; /* Highlight color for active tab */
+}
+
+
+/* Filter Section and Pagination Styling */
+.filter-section, .pagination {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-section select, .entries-per-page input {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Button Styling */
+.page-button, .entries-per-page button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.page-button:hover, .entries-per-page button:hover {
+  background-color: #367c39;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+  .filter-section, .pagination {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.mat-tab-body-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust the height as necessary */
+}
+
+.pieChartDIv{
+  height: 80vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineChartData{
+  margin-left: 50px;
+  height: 90vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}

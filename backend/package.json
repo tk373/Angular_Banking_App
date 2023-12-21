@@ -1,0 +1,38 @@
+{
+  "name": "bwz-backend-bank-of-rapperswil",
+  "version": "0.5.2",
+  "private": true,
+  "scripts": {
+    "start": "node --experimental-modules --es-module-specifier-resolution=node bin/www.js",
+    "serve": "npm run start",
+    "test": "ava"
+  },
+  "type": "module",
+  "dependencies": {
+    "body-parser": "~1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "~4.3.3",
+    "express": "~4.18.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.0.1",
+    "morgan": "~1.10.0",
+    "nedb": "^1.8.0",
+    "serve-favicon": "~2.5.0"
+  },
+  "devDependencies": {
+    "ava": "^5.3.1"
+  },
+  "ava": {
+    "nodeArguments": [
+      "--experimental-modules",
+      "--es-module-specifier-resolution=node"
+    ],
+    "require": [
+      "./test/setup.js"
+    ],
+    "files": [
+      "./test/spec/*.spec.js"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+      <header class="app-header">
+          <div class="title">
+            <h1>Fishermans BANKING</h1>
+          </div>
+          <div class="navigation-buttons">
+            <button mat-button [routerLink]="['/home/dashboard']" class="nav-button">Home</button>
+            <button mat-button [routerLink]="['/home/e-cockpit']" class="nav-button">e-Cockpit</button>
+          </div>
+          <button class="logout-button" (click)="logout()">
+              Logout {{ userName ? '' + userName + '' : '' }}
+            </button>
+        </header>
+        <router-outlet></router-outlet>

@@ -1,0 +1,16 @@
+<div class="lineChartData">
+    <ngx-charts-line-chart
+       [view]="chartsize"
+        [scheme]="customColorScheme"
+        [results]="lineChartData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="'Time'"
+        [yAxisLabel]="'Total'"
+        [xAxisTickFormatting]="formatXAxisTick"
+        [timeline]="true">
+    </ngx-charts-line-chart>
+  </div>

@@ -1,0 +1,80 @@
+<div class="e-cockpit">
+    <mat-tab-group>
+        <mat-tab label="Bewegungen">
+            <div class="filter-section">
+                <select [(ngModel)]="selectedYear" (change)="onFilterYearChange()">
+                    <option [ngValue]="0">All Years</option>
+                    <option *ngFor="let year of availableYears" [ngValue]="year">{{ year }}</option>
+                  </select>
+                  <select [disabled]="!selectedYear || availableMonths.length === 0" [(ngModel)]="selectedMonth" (change)="onFilterMonthChange()">
+                    <option [ngValue]="0">All Months</option>
+                    <option *ngFor="let month of availableMonths" [ngValue]="month.monthNumber">
+                      {{ month.monthName }}
+                    </option>
+                  </select>
+              </div>        
+             <app-cockpittable [pagedTransactions]="pagedTransactions"></app-cockpittable>
+             <div class="pagination">
+              <button class="page-button" (click)="previousPage()">&lt;</button>
+              <span>{{ currentPage }} / {{ totalPages }}</span>
+              <button class="page-button" (click)="nextPage()">&gt;</button>
+            
+              <!-- Entries Per Page Input -->
+              <div class="entries-per-page">
+                <label for="entries-per-page">Entries per Page:</label>
+                <input 
+                  type="number" 
+                  id="entries-per-page" 
+                  [(ngModel)]="entriesPerPage" 
+                  (ngModelChange)="onEntriesPerPageChange()" 
+                  min="1" 
+                />
+              </div>
+            </div>  
+        </mat-tab>
+        <mat-tab label="Saldoverlauf">
+          <div class="filter-section">
+            <select [(ngModel)]="selectedYear" (change)="onFilterYearChange()">
+                <option [ngValue]="0">All Years</option>
+                <option *ngFor="let year of availableYears" [ngValue]="year">{{ year }}</option>
+              </select>
+              <select [disabled]="!selectedYear || availableMonths.length === 0" [(ngModel)]="selectedMonth" (change)="onFilterMonthChange()">
+                <option [ngValue]="0">All Months</option>
+                <option *ngFor="let month of availableMonths" [ngValue]="month.monthNumber">
+                  {{ month.monthName }}
+                </option>
+              </select>
+          </div>
+         <app-linechart [chartsize]="chartSize" [customColorScheme]="customColorScheme" [selectedYear]="selectedYear" [selectedMonth]="selectedMonth" [transactions]="transactions"></app-linechart>
+        </mat-tab>
+        <mat-tab label="Ausgaben nach Kategorie"> 
+          <div class="filter-section">
+            <select [(ngModel)]="selectedYear" (change)="onFilterYearChange()">
+                <option [ngValue]="0">All Years</option>
+                <option *ngFor="let year of availableYears" [ngValue]="year">{{ year }}</option>
+              </select>
+              <select [disabled]="!selectedYear || availableMonths.length === 0" [(ngModel)]="selectedMonth" (change)="onFilterMonthChange()">
+                <option [ngValue]="0">All Months</option>
+                <option *ngFor="let month of availableMonths" [ngValue]="month.monthNumber">
+                  {{ month.monthName }}
+                </option>
+              </select>
+          </div> 
+          <app-piechart [chartsize]="chartSize" [customColorScheme]="customColorScheme" [selectedYear]="selectedYear" [selectedMonth]="selectedMonth" [transactions]="transactions"></app-piechart>
+        </mat-tab>
+        <mat-tab label="Budgetplan">
+          <div class="filter-section">
+            <select [(ngModel)]="selectedYear" (change)="onFilterYearChange()">
+                <option [ngValue]="0">All Years</option>
+                <option *ngFor="let year of availableYears" [ngValue]="year">{{ year }}</option>
+            </select>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label for="budget">Budget</mat-label>
+              <input (ngModelChange)="onBudgetChange($event)" min="0" type="number " name="budget" [(ngModel)]="setbudget" matInput [errorStateMatcher]="matcher"placeholder="zB. 150">
+            </mat-form-field>
+          </div>
+          <app-groupchart [setbudget]="setbudget" [chartsize]="chartSize" [customColorScheme]="customColorScheme" [selectedYear]="selectedYear" [selectedMonth]="selectedMonth" [transactions]="transactions"></app-groupchart>
+        </mat-tab>
+      </mat-tab-group>
+     
+  </div>

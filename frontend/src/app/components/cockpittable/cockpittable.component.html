@@ -1,0 +1,23 @@
+<table class="transactions-table">
+    <thead>
+      <tr>
+        <th>Datum</th>
+        <th>Von</th>
+        <th>Zu</th>
+        <th>Betrag</th>
+        <th>Kategorie</th>
+        <th>Kontostand Neu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of pagedTransactions">
+        <td>{{ transaction.date | date: 'dd.MM.yyyy' }}</td>
+        <td>{{ transaction.from }}</td>
+        <td>{{ transaction.target }}</td>
+        <td>{{ transaction.amount.toFixed(2) }}</td>
+        <td>{{ transaction.category }}</td>
+        <td>{{ transaction.total.toFixed(2)}}</td>
+      </tr>
+    </tbody>
+  </table>
+
