@@ -1,6 +1,6 @@
 {
-  "name": "bwz-finance-portal-template",
-  "version": "0.1.1",
+  "name": "fishermans-banking-frontend",
+  "version": "0.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
