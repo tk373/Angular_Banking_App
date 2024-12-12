@@ -1,5 +1,5 @@
-import {accountService} from '../services/accountService';
-import {userService} from '../services/userService';
+import {accountService} from '../services/accountService.js';
+import {userService} from '../services/userService.js';
 
 async function getAccountByParams(req, res, next) {
 	await getAccount(req, res, next, req.params?.accountNr);

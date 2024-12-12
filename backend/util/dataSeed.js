@@ -1,5 +1,5 @@
-import {userService} from '../services/userService';
-import {accountService} from '../services/accountService';
+import {userService} from '../services/userService.js';
+import {accountService} from '../services/accountService.js';
 
 const initialAccountData = [
     { accountNr: null, login: "user1", firstname: "Bob", lastname: "Müller", password: "1234" },

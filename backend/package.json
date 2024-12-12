@@ -1,10 +1,9 @@
 {
-  "name": "bwz-backend-bank-of-rapperswil",
-  "version": "0.5.2",
+  "name": "backend-of-fishermans-banking",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
-    "start": "node --experimental-modules --es-module-specifier-resolution=node bin/www.js",
-    "serve": "npm run start",
+    "start": "node app.js",
     "test": "ava"
   },
   "type": "module",
@@ -13,6 +12,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "debug": "~4.3.3",
+    "dotenv": "^16.4.7",
     "express": "~4.18.2",
     "express-jwt": "^8.4.1",
     "jsonwebtoken": "^9.0.1",

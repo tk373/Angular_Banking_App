@@ -1,9 +1,9 @@
 import Datastore from 'nedb';
-import {resultUtil} from '../util/resultUtil';
-import {toQuery, toCountedQuery} from '../util/dbUtil';
-import {config} from '../config';
-import {cryptoUtil} from '../util/cryptoUtil';
-import {accountService} from './accountService';
+import {resultUtil} from '../util/resultUtil.js';
+import {toQuery, toCountedQuery} from '../util/dbUtil.js';
+import {config} from '../config.js';
+import {cryptoUtil} from '../util/cryptoUtil.js';
+import {accountService} from './accountService.js';
 
 const db = new Datastore(config.db.inMemory ? {} : {filename: config.db.dbPath.users, autoload: true});
 

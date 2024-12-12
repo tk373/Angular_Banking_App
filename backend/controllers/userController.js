@@ -1,5 +1,5 @@
-import {userService} from '../services/userService';
-import {resultUtil} from '../util/resultUtil';
+import {userService} from '../services/userService.js';
+import {resultUtil} from '../util/resultUtil.js';
 
 async function register(req, res, next) {
   let {login, firstname, lastname, password} = req.body;
