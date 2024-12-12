@@ -8,6 +8,7 @@ import { ECockpitComponent } from './components/e-cockpit/e-cockpit.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard],
@@ -17,7 +18,7 @@ const routes: Routes = [
       component: DashboardComponent
    },
   {
-    path: 'e-cockpit', // Child route
+    path: 'e-cockpit',
     component: ECockpitComponent
   }
 ]
