@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bwz-rappi": {
+    "fishermansbanking": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bwz-rappi:build:production"
+              "browserTarget": "fishermansbanking:build:production"
             },
             "development": {
-              "browserTarget": "bwz-rappi:build:development"
+              "browserTarget": "fishermansbanking:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bwz-rappi:build"
+            "browserTarget": "fishermansbanking:build"
           }
         },
         "test": {
