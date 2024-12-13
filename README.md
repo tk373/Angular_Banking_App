@@ -15,6 +15,7 @@ The Backend, that i built with node.js is deployed on Render.
 ### Demo
 
 The Demo of the application can be tested here: https://fishermansbanking.netlify.app
+If the login or register doesnt function on the first try, give it a minute. That's becasue i'm using a free hosting the backend only gets started when it's actually used.
 
 ## Usage
 
